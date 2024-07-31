@@ -4,9 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-factura',
   standalone: true,
   imports: [],
-  templateUrl: './factura.component.html',
-  styleUrl: './factura.component.css'
+  templateUrl: './factura.component.html'
 })
-export class FacturaComponent {
-
-}
+export class FacturaComponent {}
