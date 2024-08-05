@@ -1,1 +1,24 @@
-<p>factura works!</p>
+<div class="container">
+    <div class="card my-3">
+        <div class="card-header text-center">
+            <h2>Ejemplo Factura</h2>
+        </div>
+        <div class="card-body">
+            <factura-view [id]="factura.id" [nombre]="factura.nombre"></factura-view>
+
+            <div class="row my-3">
+                <div class="col">
+                    <client-view [cliente]="factura.cliente"></client-view>
+                </div>
+                <div class="col">
+                    <company-view [company]="factura.company"></company-view>
+                </div>
+            </div>
+            <div>
+                <list-items [items]="factura.items"></list-items>
+            </div>
+
+        </div>
+    </div>
+
+</div>
