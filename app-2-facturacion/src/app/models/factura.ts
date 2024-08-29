@@ -8,4 +8,5 @@ export class Factura {
   cliente!: Cliente;
   company!: Company;
   items!: Item[];
+  total!: number;
 }

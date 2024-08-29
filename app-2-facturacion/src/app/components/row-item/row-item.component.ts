@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Item } from '../../models/item';
 
 @Component({
@@ -10,4 +10,12 @@ import { Item } from '../../models/item';
 export class RowItemComponent {
   //variable que contiene el item de la factura
   @Input() item!: Item;
+
+  //emite el id a eliminar hacia el padre
+  @Output() idEventEmitter: EventEmitter<number> = new EventEmitter();
+
+  //Metodo encargado de eliminar un item de la tabla
+  onRemoveItem(id: number) {
+    this.idEventEmitter.emit(id);
+  }
 }

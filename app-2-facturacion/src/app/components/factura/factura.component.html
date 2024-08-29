@@ -4,19 +4,22 @@
             <h2>Ejemplo Factura</h2>
         </div>
         <div class="card-body">
-            <factura-view [id]="factura.id" [nombre]="factura.nombre"></factura-view>
+            <factura-view [id]="factura.id" [nombre]="factura.nombre" />
 
             <div class="row my-3">
                 <div class="col">
-                    <client-view [cliente]="factura.cliente"></client-view>
+                    <client-view [cliente]="factura.cliente" />
                 </div>
                 <div class="col">
-                    <company-view [company]="factura.company"></company-view>
+                    <company-view [company]="factura.company" />
                 </div>
             </div>
             <div>
-                <list-items [items]="factura.items"></list-items>
+                <list-items [items]="factura.items" (idEventEmitter)="onRemoveItem($event)" />
             </div>
+            <total [total]="factura.total" />
+
+            <form-item (itemEventEmitter)="addItem($event)" />
 
         </div>
     </div>
